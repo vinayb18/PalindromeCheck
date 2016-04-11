@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="commrhardman23.httpsgithub.palindromecheck.PalindromeChecker">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/edtxtUserWord"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:hint="What word would you like to check?" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Check!"
+        android:id="@+id/btnCheckPalindrome"
+        android:layout_below="@+id/edtxtUserWord"
+        android:layout_centerHorizontal="true"
+        android:onClick="palindromeCheck" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtvwResult"
+        android:hint="Whether the word is a palindrome will be displayed here..."
+        android:gravity="center_horizontal"
+        android:textSize="16sp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+</RelativeLayout>
