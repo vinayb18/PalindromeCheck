@@ -29,9 +29,11 @@ public class PalindromeChecker extends AppCompatActivity {
      */
     public void palindromeCheck(View vw){
 
-        //Get the user input here
+        //Set a variable equal to the user input
 
-        checkForPalindrome(userInput, 0);
+        //boolean isPalindrome = checkForPalindrome(userInput, 0, false);
+
+        //Check whether isPalindrome is true or false and print out a statement accordingly
 
     }
 
@@ -40,21 +42,28 @@ public class PalindromeChecker extends AppCompatActivity {
      * palindrome
      * @param word is the word that will be checked for whether it is a palindrome or not
      * @param index is the index currently being checked
+     * @param result is whether the word is a palindrome or not
      */
-    private void checkForPalindrome(String word, int index){
+    private boolean checkForPalindrome(String word, int index, boolean result){
+
 
         /**
-         * Store the index that is equally distant from the end of the word as the current index
-         * is from the beginning of the word in a variable
+         * Set a variable called indexFromEnd that is the corresponding index from the end that
+         * matches the index that you're at (i.e. word length = 10: index = 0 then indexFromEnd = 9,
+         * index = 1 then indexFromEnd = 8, etc.).
          *
-         * Then check whether or not the letter at these indices are equal. If they are, check
-         * whether the index is one less than the indexFromTheEnd or equal to the indexFromTheEnd.
-         * If one of those two conditions is met, display that it is a palindrome and then put a
-         * return statement. If the two conditions aren't met, call the method again, but add one
-         * to the index.
+         * Check whether the character at the index is equal to the character at the indexFromTheEnd.
+         * If it's not, set result to false.
          *
-         * If the letters are not equal, display that the word is not a palindrome.
+         * If it is, check for whether the index is one less than the indexFromEnd OR index is equal
+         * to indexFromEnd. If it is, then what should you set result to? If it's not, set result to
+         * call your recursive method.
+         *
+         * The last statement of your method should be to return result
+         *
          */
+
+        return result;
 
     }
 }
