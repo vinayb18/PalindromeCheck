@@ -29,9 +29,15 @@ public class PalindromeChecker extends AppCompatActivity {
      */
     public void palindromeCheck(View vw){
 
-        //Set a variable equal to the user input
+        String userInput=edtxtUserWord.getText().toString();
 
-        //boolean isPalindrome = checkForPalindrome(userInput, 0, false);
+        boolean isPalindrome = checkForPalindrome(userInput, 0, false);
+        if (isPalindrome==true) {
+            txtvwResult.setText("You have a palindrome");
+        }
+        else {
+            txtvwResult.setText("You don't have a palindrome");
+        }
 
         //Check whether isPalindrome is true or false and print out a statement accordingly
 
@@ -43,9 +49,23 @@ public class PalindromeChecker extends AppCompatActivity {
      * @param word is the word that will be checked for whether it is a palindrome or not
      * @param index is the index currently being checked
      * @param result is whether the word is a palindrome or not
+     * @return a boolean that symbolizes whether the word is a palindrome or not
      */
     private boolean checkForPalindrome(String word, int index, boolean result){
 
+        int indexFromEnd=word.length()-(index+1);
+        //when char @indexFromEnd is = to char at index result = true
+        if (word.charAt(index)==word.charAt(indexFromEnd)){
+            if(indexFromEnd >= index){
+                result = true;
+            }else{
+                result = checkForPalindrome(word, index + 1, result);
+            }
+
+        }
+        return result;
+
+    }
 
         /**
          * Set a variable called indexFromEnd that is the corresponding index from the end that
@@ -63,7 +83,5 @@ public class PalindromeChecker extends AppCompatActivity {
          *
          */
 
-        return result;
-
     }
-}
+
